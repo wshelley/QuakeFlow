@@ -1,9 +1,29 @@
 ## QuakeFlow Demo Install
 
 
+## Pre-Setup Stages
+
 ```
-git clone -b factorize https://github.com/wayneweiqiang/PhaseNet.git
-git clone https://github.com/wayneweiqiang/GMMA.git
-conda env create quakeflow --file=env.yml --force
-conda activate quakeflow
+wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3.sh -b -p "${HOME}/miniforge3/"
+export PATH="~/miniforge3/condabin:~/miniforge3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+mamba init
+bash
+conda info
+```
+
+```
+git clone https://github.com/wshelley/QuakeFlow
+cd QuakeFlow
+git checkout bgs-data
+git clone https://github.com/wayneweiqiang/PhaseNet.git
+git clone https://github.com/wayneweiqiang/GaMMA.git
+
+cd kubeflow
+mamba create -n quakeflow -y
+source activate quakeflow
+mamba env list
+mamba env update -f=env.yml
+
+python -m ipykernel install --user --name=quakeflow-kernel
 ```
