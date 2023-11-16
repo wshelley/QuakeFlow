@@ -27,3 +27,14 @@ mamba env update -f=env.yml
 
 python -m ipykernel install --user --name=quakeflow-kernel
 ```
+
+## Usage:
+
+Open workflow-simple.ipynb
+
+Change the kernel (top right corner - currently Python3), to quakeflow-kernel. It sometimes take a coupel of mins to appear.
+
+Choose "run_local" True or False.
+
+Enter Kubeflow creds at bottom if running local = false.
+
