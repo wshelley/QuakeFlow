@@ -38,3 +38,5 @@ Choose "run_local" True or False.
 
 Enter Kubeflow creds at bottom if running local = false.
 
+When running locally, it currently fails at HypoDD stage. This works fine when running on KFP backend ("run_local=False")
+
